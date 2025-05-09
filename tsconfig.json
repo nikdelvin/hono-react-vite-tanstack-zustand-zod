@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "strict": true,
+        "verbatimModuleSyntax": true,
+        "skipLibCheck": true,
+        "types": ["node"],
+        "jsx": "react-jsx",
+        "jsxImportSource": "react",
+        "outDir": "./dist",
+        "paths": {
+            "@c/*": ["./app/client/*"],
+            "@s/*": ["./app/server/*"],
+            "@u/*": ["./app/utils/*"]
+        }
+    },
+    "exclude": ["node_modules", "dist"]
+}
