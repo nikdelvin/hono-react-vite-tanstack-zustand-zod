@@ -23,7 +23,8 @@ export default defineConfig(({ mode }) => {
                 alias: {
                     '@c': resolve(__dirname, 'app/client'),
                     '@s': resolve(__dirname, 'app/server'),
-                    '@u': resolve(__dirname, 'app/utils')
+                    '@u': resolve(__dirname, 'app/utils'),
+                    '@v': resolve(__dirname, 'app/validation')
                 }
             }
         }
@@ -52,7 +53,8 @@ export default defineConfig(({ mode }) => {
                 alias: {
                     '@c': resolve(__dirname, 'app/client'),
                     '@s': resolve(__dirname, 'app/server'),
-                    '@u': resolve(__dirname, 'app/utils')
+                    '@u': resolve(__dirname, 'app/utils'),
+                    '@v': resolve(__dirname, 'app/validation')
                 }
             },
             server: {

@@ -13,7 +13,8 @@
         "paths": {
             "@c/*": ["./app/client/*"],
             "@s/*": ["./app/server/*"],
-            "@u/*": ["./app/utils/*"]
+            "@u/*": ["./app/utils/*"],
+            "@v/*": ["./app/validation/*"]
         }
     },
     "exclude": ["node_modules", "dist"]
