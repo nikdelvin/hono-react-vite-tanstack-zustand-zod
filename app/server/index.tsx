@@ -1,5 +1,6 @@
 import { serve } from '@hono/node-server'
 import { serveStatic } from '@hono/node-server/serve-static'
+import { getEnv } from '@u/env'
 import { Hono } from 'hono'
 import { renderToString } from 'react-dom/server'
 import routes from './router'
@@ -12,16 +13,20 @@ const app = new Hono()
             renderToString(
                 <html>
                     <head>
+                        <title>{`Launched on port: ${getEnv('PORT') ?? 'N/A'}`}</title>
                         <meta charSet="utf-8" />
                         <meta
                             content="width=device-width, initial-scale=1"
                             name="viewport"
                         />
                         {import.meta.env.PROD ? (
+                            <>
+                            <link rel="preload stylesheet" href="/static/assets/index.css" as="style"/>
                             <script
                                 type="module"
                                 src="/static/client.js"
                             ></script>
+                            </>
                         ) : (
                             <script
                                 type="module"
@@ -45,7 +50,7 @@ if (import.meta.env.PROD) {
     serve(
         {
             fetch: app.fetch,
-            port: Number(import.meta.env.PORT)
+            port: Number(getEnv('PORT'))
         },
         (info) => {
             console.log(`Application is running on ${String(info.port)}`)

@@ -3,11 +3,11 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
-        "dev": "npm run prettier && npm run eslint && vite",
+        "dev": "npm run prettier && npm run eslint && sh -ac '. .env; vite'",
         "build:client": "vite build --mode client",
         "build:server": "vite build",
         "build": "npm run build:server && npm run build:client",
-        "start": "node dist/_worker.js",
+        "start": "sh -ac '. .env; node dist/_worker.js'",
         "eslint": "eslint app",
         "prettier": "prettier --write ."
     },
